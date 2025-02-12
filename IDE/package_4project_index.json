@@ -1,0 +1,57 @@
+{
+  "packages": [
+    {
+      "name": "4Project.co.il",
+      "maintainer": "4Project.co.il",
+      "websiteURL": "https://www.4project.co.il/",
+      "email": "info@4project.co.il",
+      "platforms": [
+        {
+          "name": "4Project.co.il SAMD Boards (dependency: Arduino SAMD Boards 1.8.1)",
+          "architecture": "samd",
+          "version": "0.0.1",
+          "category": "Contributed",
+          "url": "https://github.com/abetis/Arduino-core/IDE/4project-samd-0.0.1.zip",
+          "archiveFileName": "4project-samd-0.0.1.zip",
+          "checksum": "SHA-256:9525015deb189575066835d0aee8e99bfefd952813a3ab544d0145701b8291f2",
+          "size": "1352426",
+          "boards": [
+            {
+              "name": "Plug-And-Play SAMD21 Dev Board"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "arm-none-eabi-gcc",
+              "version": "7-2017q4"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.8.0-48-gb176eee"
+            },
+            {
+              "packager": "arduino",
+              "name": "openocd",
+              "version": "0.9.0-arduino"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS",
+              "version": "4.5.0"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS-Atmel",
+              "version": "1.2.0"
+            }
+          ]
+        }
+      ],
+      "tools":
+      [
+      ]
+    }
+  ]
+}

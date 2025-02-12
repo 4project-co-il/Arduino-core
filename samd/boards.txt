@@ -1,0 +1,46 @@
+# Copyright (c) 2014-2017 Arduino LLC.  All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+# Plug-And-Play SAMD21 Development board
+# ---------------------------------------
+pnp_samd21_dev.name=PlugAndPlay SAMD21 Dev
+pnp_samd21_dev.vid.0=0x04D8
+pnp_samd21_dev.pid.0=0xE525
+pnp_samd21_dev.vid.1=0x04D8
+pnp_samd21_dev.pid.1=0xE525
+pnp_samd21_dev.upload.tool=bossac
+pnp_samd21_dev.upload.protocol=sam-ba
+pnp_samd21_dev.upload.maximum_size=262144
+pnp_samd21_dev.upload.maximum_data_size=32768
+pnp_samd21_dev.upload.use_1200bps_touch=true
+pnp_samd21_dev.upload.wait_for_upload_port=true
+pnp_samd21_dev.upload.native_usb=true
+pnp_samd21_dev.build.mcu=cortex-m0plus
+pnp_samd21_dev.build.f_cpu=48000000L
+pnp_samd21_dev.build.usb_product="PlugAndPlay SAMD21 Dev"
+pnp_samd21_dev.build.usb_manufacturer="4project.co.il"
+pnp_samd21_dev.build.board=SAMD_ZERO
+pnp_samd21_dev.build.core=arduino
+pnp_samd21_dev.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags}
+pnp_samd21_dev.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+pnp_samd21_dev.build.openocdscript=openocd_scripts/arduino_zero.cfg
+pnp_samd21_dev.build.variant=pnp_samd21_dev
+pnp_samd21_dev.build.variant_system_lib=
+pnp_samd21_dev.build.extra_combine_flags=
+pnp_samd21_dev.build.vid=0x04D8
+pnp_samd21_dev.build.pid=0xE525
+pnp_samd21_dev.bootloader.tool=openocd
+pnp_samd21_dev.bootloader.file=zero/pnp_samd21_dev.bin
