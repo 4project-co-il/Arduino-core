@@ -11,7 +11,7 @@
           "architecture": "samd",
           "version": "0.0.1",
           "category": "Contributed",
-          "url": "https://github.com/abetis/Arduino-core/raw/main/IDE/4project-samd-0.0.1.zip",
+          "url": "https://github.com/abetis/Arduino-core/raw/main/Arduino-IDE/4project-samd-0.0.1.zip",
           "archiveFileName": "4project-samd-0.0.1.zip",
           "checksum": "SHA-256:8a275f3e7d729f84a19fb87dd3b708d9935adc8031c68e51f1f8f7921b07a2c2",
           "size": "5130300",
