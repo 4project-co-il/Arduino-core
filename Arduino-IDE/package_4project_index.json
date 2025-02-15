@@ -5,6 +5,9 @@
       "maintainer": "4Project.co.il",
       "websiteURL": "https://www.4project.co.il/",
       "email": "info@4project.co.il",
+      "help": {
+        "online": "https://github.com/4project-co-il/Arduino-core"
+      },
       "platforms": [
         {
           "name": "4Project.co.il SAMD Boards (dependency: Arduino SAMD Boards 1.8.1)",
@@ -15,6 +18,9 @@
           "archiveFileName": "4project-samd-0.0.1.zip",
           "checksum": "SHA-256:8a275f3e7d729f84a19fb87dd3b708d9935adc8031c68e51f1f8f7921b07a2c2",
           "size": "5130300",
+          "help": {
+            "online": "https://github.com/4project-co-il/Arduino-core"
+          },
           "boards": [
             {
               "name": "PlugAndPlay SAMD21 Dev Board"
