@@ -80,13 +80,13 @@ extern "C" unsigned int PINCOUNT_fn();
 // #define digitalPinToTimer(P)
 
 // LEDs
-#define PIN_LED_4            (4u)
+#define PIN_LED_A4           (A4)
 #define PIN_LED_RXL          (25u)
-#define PIN_LED_TXL          (26u)
-#define PIN_LED              PIN_LED_4
+#define PIN_LED_TXL          (30u)
+#define PIN_LED              PIN_LED_A4
 #define PIN_LED2             PIN_LED_RXL
 #define PIN_LED3             PIN_LED_TXL
-#define LED_BUILTIN          PIN_LED_4
+#define LED_BUILTIN          PIN_LED_A4
 
 /*
  * Analog pins
@@ -132,14 +132,14 @@ static const uint8_t ATN = PIN_ATN;
  */
 #define SPI_INTERFACES_COUNT 1
 
-#define PIN_SPI_MISO         (22u)
-#define PIN_SPI_MOSI         (23u)
-#define PIN_SPI_SCK          (24u)
-#define PERIPH_SPI           sercom4
-#define PAD_SPI_TX           SPI_PAD_2_SCK_3
-#define PAD_SPI_RX           SERCOM_RX_PAD_0
+#define PIN_SPI_MISO         (3u)
+#define PIN_SPI_MOSI         (4u)
+#define PIN_SPI_SCK          (5u)
+#define PERIPH_SPI           sercom2
+#define PAD_SPI_TX           SPI_PAD_0_SCK_3
+#define PAD_SPI_RX           SERCOM_RX_PAD_1
 
-static const uint8_t SS	  = PIN_A2 ;	// SERCOM4 last PAD is present on A2 but HW SS isn't used. Set here only for reference.
+static const uint8_t SS	  = (36u) ;	// SERCOM4 last PAD is present on A2 but HW SS isn't used. Set here only for reference.
 static const uint8_t MOSI = PIN_SPI_MOSI ;
 static const uint8_t MISO = PIN_SPI_MISO ;
 static const uint8_t SCK  = PIN_SPI_SCK ;
@@ -190,13 +190,13 @@ static const uint8_t SCL = PIN_WIRE_SCL;
  *	=========================
 */
 extern SERCOM sercom0;
-extern SERCOM sercom1;
+//extern SERCOM sercom1;
 extern SERCOM sercom2;
 extern SERCOM sercom3;
-extern SERCOM sercom4;
-extern SERCOM sercom5;
+//extern SERCOM sercom4;
+//extern SERCOM sercom5;
 
-extern Uart Serial;
+//extern Uart Serial;
 extern Uart Serial1;
 
 #endif
