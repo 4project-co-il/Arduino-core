@@ -70,12 +70,12 @@
  * LEDs definitions
  */
 #define BOARD_LED_PORT                    (0)
-#define BOARD_LED_PIN                     (8)
+#define BOARD_LED_PIN                     (5)
 
 #define BOARD_LEDRX_PORT                  (1)
 #define BOARD_LEDRX_PIN                   (3)
 
-#define BOARD_LEDTX_PORT                  (0)
-#define BOARD_LEDTX_PIN                   (27)
+#define BOARD_LEDTX_PORT                  (1)
+#define BOARD_LEDTX_PIN                   (22)
 
 #endif // _BOARD_DEFINITIONS_H_

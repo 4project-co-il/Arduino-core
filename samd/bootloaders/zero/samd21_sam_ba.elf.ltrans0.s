@@ -467,8 +467,8 @@ sam_ba_putdata.isra.0:
 	blx	r3
 	movs	r2, #128
 	ldr	r3, .L98
-	lsls	r2, r2, #20
-	str	r2, [r3, #20]
+	lsls	r2, r2, #15
+	str	r2, [r3]
 	movs	r2, #100
 	ldr	r3, .L98+4
 	@ sp needed
@@ -477,7 +477,7 @@ sam_ba_putdata.isra.0:
 .L99:
 	.align	2
 .L98:
-	.word	1090536448
+	.word	1090536596
 	.word	.LANCHOR0
 	.size	sam_ba_putdata.isra.0, .-sam_ba_putdata.isra.0
 	.thumb_set sam_ba_putdata_xmd.isra.2,sam_ba_putdata.isra.0
@@ -613,11 +613,10 @@ SysTick_Handler:
 	ldrb	r1, [r3]
 	ldrb	r0, [r3, #1]
 	adds	r1, r1, r0
-	movs	r0, #128
+	movs	r0, #32
 	uxtb	r1, r1
 	strb	r1, [r3, #1]
 	ldr	r1, .L133+8
-	lsls	r0, r0, #1
 	str	r0, [r1, #28]
 .L123:
 	ldrb	r1, [r2, #28]
@@ -645,9 +644,8 @@ SysTick_Handler:
 	ldrb	r3, [r3, #1]
 	cmp	r1, r3
 	bne	.L126
-	movs	r1, #128
+	movs	r1, #32
 	ldr	r3, .L133+8
-	lsls	r1, r1, #1
 	str	r1, [r3, #28]
 .L126:
 	ldrh	r3, [r2, #6]
@@ -660,9 +658,9 @@ SysTick_Handler:
 	cmp	r3, #0
 	bne	.L128
 	movs	r1, #128
-	ldr	r3, .L133+8
-	lsls	r1, r1, #20
-	str	r1, [r3, #24]
+	ldr	r3, .L133+12
+	lsls	r1, r1, #15
+	str	r1, [r3]
 .L128:
 	ldrh	r3, [r2, #30]
 	cmp	r3, #0
@@ -924,9 +922,9 @@ sam_ba_monitor_run:
 	cmp	r3, #255
 	beq	.L164
 	cmp	r3, #35
-	beq	.LCB1016
+	beq	.LCB1015
 	b	.L165	@long jump
-.LCB1016:
+.LCB1015:
 	ldrb	r3, [r4, #20]
 	cmp	r3, #0
 	beq	.L166
@@ -1175,9 +1173,9 @@ sam_ba_monitor_run:
 	.syntax unified
 	ldrb	r3, [r3, #8]
 	cmp	r3, #0
-	bne	.LCB1283
+	bne	.LCB1282
 	b	.L174	@long jump
-.LCB1283:
+.LCB1282:
 	ldr	r3, [r4, #24]
 	movs	r0, #6
 	ldr	r3, [r3]
@@ -1355,9 +1353,9 @@ sam_ba_monitor_run:
 	b	.L202
 .L196:
 	cmp	r3, #90
-	beq	.LCB1502
+	beq	.LCB1501
 	b	.L174	@long jump
-.LCB1502:
+.LCB1501:
 	movs	r5, #0
 	ldr	r3, [r4, #36]
 	ldr	r2, [r4, #120]
@@ -1844,9 +1842,9 @@ USB_IsConfigured:
 	orrs	r2, r0
 	ldr	r0, .L369+32
 	cmp	r2, r0
-	bne	.LCB2089
+	bne	.LCB2088
 	b	.L297	@long jump
-.LCB2089:
+.LCB2088:
 	bgt	.L298
 	movs	r0, #128
 	lsls	r0, r0, #1
@@ -1856,9 +1854,9 @@ USB_IsConfigured:
 	cmp	r2, #129
 	beq	.L301
 	cmp	r2, #130
-	bne	.LCB2101
+	bne	.LCB2100
 	b	.L302	@long jump
-.LCB2101:
+.LCB2100:
 	cmp	r2, #128
 	bne	.L296
 .L301:
@@ -1872,23 +1870,23 @@ USB_IsConfigured:
 	movs	r3, #129
 	lsls	r3, r3, #1
 	cmp	r2, r3
-	bne	.LCB2118
+	bne	.LCB2117
 	b	.L304	@long jump
-.LCB2118:
-	bge	.LCB2120
+.LCB2117:
+	bge	.LCB2119
 	b	.L367	@long jump
-.LCB2120:
+.LCB2119:
 	adds	r3, r3, #255
 	adds	r3, r3, #255
 	cmp	r2, r3
-	bne	.LCB2124
+	bne	.LCB2123
 	b	.L306	@long jump
-.LCB2124:
+.LCB2123:
 	ldr	r3, .L369+36
 	cmp	r2, r3
-	bne	.LCB2127
+	bne	.LCB2126
 	b	.L367	@long jump
-.LCB2127:
+.LCB2126:
 .L296:
 	movs	r3, #32
 	adds	r5, r5, #255
@@ -1909,9 +1907,9 @@ USB_IsConfigured:
 	movs	r1, #136
 	lsls	r1, r1, #4
 	cmp	r2, r1
-	bne	.LCB2151
+	bne	.LCB2150
 	b	.L311	@long jump
-.LCB2151:
+.LCB2150:
 	movs	r3, #160
 	lsls	r3, r3, #3
 	cmp	r2, r3
@@ -1929,15 +1927,15 @@ USB_IsConfigured:
 .L309:
 	ldr	r3, .L369+40
 	cmp	r2, r3
-	bne	.LCB2173
+	bne	.LCB2172
 	b	.L367	@long jump
-.LCB2173:
+.LCB2172:
 	ble	.L296
 	ldr	r3, .L369+44
 	cmp	r2, r3
-	bne	.LCB2178
+	bne	.LCB2177
 	b	.L315	@long jump
-.LCB2178:
+.LCB2177:
 	ldr	r3, .L369+48
 	cmp	r2, r3
 	bne	.L296
@@ -2128,19 +2126,19 @@ USB_IsConfigured:
 	strh	r3, [r4, #36]
 	ldrh	r3, [r4, #34]
 	cmp	r3, #0
-	beq	.LCB2434
+	beq	.LCB2433
 	b	.L296	@long jump
-.LCB2434:
+.LCB2433:
 	ldrh	r3, [r4, #36]
 	cmp	r3, #0
-	bne	.LCB2438
+	bne	.LCB2437
 	b	.L296	@long jump
-.LCB2438:
+.LCB2437:
 	ldrh	r3, [r4, #36]
 	cmp	r3, #3
-	bls	.LCB2442
+	bls	.LCB2441
 	b	.L296	@long jump
-.LCB2442:
+.LCB2441:
 	ldrb	r3, [r2]
 	cmp	r3, #0
 	beq	.L331
@@ -2197,19 +2195,19 @@ USB_IsConfigured:
 	strh	r3, [r4, #36]
 	ldrh	r3, [r4, #34]
 	cmp	r3, #0
-	beq	.LCB2515
+	beq	.LCB2514
 	b	.L296	@long jump
-.LCB2515:
+.LCB2514:
 	ldrh	r3, [r4, #36]
 	cmp	r3, #0
-	bne	.LCB2519
+	bne	.LCB2518
 	b	.L296	@long jump
-.LCB2519:
+.LCB2518:
 	ldrh	r3, [r4, #36]
 	cmp	r3, #3
-	bls	.LCB2523
+	bls	.LCB2522
 	b	.L296	@long jump
-.LCB2523:
+.LCB2522:
 	movs	r3, r4
 	adds	r3, r3, #42
 	ldrb	r3, [r3]
@@ -2256,9 +2254,9 @@ USB_IsConfigured:
 	adds	r3, r5, r3
 	ldrb	r3, [r3, #6]
 	lsls	r3, r3, #27
-	bmi	.LCB2589
+	bmi	.LCB2588
 	b	.L367	@long jump
-.LCB2589:
+.LCB2588:
 	movs	r2, #16
 	ldrh	r3, [r4, #36]
 	adds	r3, r3, #8
@@ -2271,9 +2269,9 @@ USB_IsConfigured:
 	adds	r3, r5, r3
 	ldrb	r3, [r3, #7]
 	lsls	r3, r3, #26
-	bmi	.LCB2607
+	bmi	.LCB2606
 	b	.L367	@long jump
-.LCB2607:
+.LCB2606:
 	ldrh	r3, [r4, #36]
 	adds	r2, r2, r2
 	adds	r3, r3, #8
@@ -2465,9 +2463,9 @@ main:
 	ldr	r4, [r1]
 	ldr	r0, .L449+24
 	cmp	r4, r0
-	beq	.LCB2810
+	beq	.LCB2809
 	b	.L398	@long jump
-.LCB2810:
+.LCB2809:
 	str	r3, [r1]
 .L394:
 	movs	r1, #30
@@ -2794,19 +2792,18 @@ main:
 	ldrb	r1, [r4]
 	ldr	r0, .L449+144
 	orrs	r3, r1
-	movs	r1, #128
+	movs	r1, #32
 	strb	r3, [r4]
 	ldr	r3, .L449+148
-	lsls	r1, r1, #1
 	str	r1, [r3, #8]
-	subs	r1, r1, #248
+	ldr	r3, .L449+152
+	subs	r1, r1, #24
 	str	r1, [r0]
-	ldr	r0, .L449+152
-	str	r1, [r0]
+	str	r1, [r3]
 	movs	r1, #128
-	lsls	r1, r1, #20
-	str	r1, [r3, #8]
-	str	r1, [r3, #24]
+	lsls	r1, r1, #15
+	str	r1, [r0]
+	str	r1, [r3]
 	movs	r1, #192
 	ldr	r3, [r7, #4]
 	lsls	r1, r1, #24
@@ -3612,7 +3609,7 @@ exception_table:
 .LC23:
 	.ascii	" \000"
 .LC25:
-	.ascii	" Feb 12 2025 15:00:44\012\015\000"
+	.ascii	" Mar 28 2025 10:31:05\012\015\000"
 .LC27:
 	.ascii	"X\012\015\000"
 .LC29:
