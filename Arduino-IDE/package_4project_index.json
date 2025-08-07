@@ -14,7 +14,7 @@
           "architecture": "samd",
           "version": "0.0.1",
           "category": "Contributed",
-          "url": "https://github.com/abetis/Arduino-core/raw/main/Arduino-IDE/4project-samd-0.0.1.zip",
+          "url": "https://github.com/4project-co-il/Arduino-core/raw/main/Arduino-IDE/4project-samd-0.0.1.zip",
           "archiveFileName": "4project-samd-0.0.1.zip",
           "checksum": "SHA-256:8a275f3e7d729f84a19fb87dd3b708d9935adc8031c68e51f1f8f7921b07a2c2",
           "size": "5130300",
@@ -59,10 +59,55 @@
           "architecture": "samd",
           "version": "0.0.2",
           "category": "Contributed",
-          "url": "https://github.com/abetis/Arduino-core/raw/main/Arduino-IDE/4project-samd-0.0.2.zip",
+          "url": "https://github.com/4project-co-il/Arduino-core/raw/main/Arduino-IDE/4project-samd-0.0.2.zip",
           "archiveFileName": "4project-samd-0.0.2.zip",
-          "checksum": "SHA-256:8a275f3e7d729f84a19fb87dd3b708d9935adc8031c68e51f1f8f7921b07a2c2",
-          "size": "5130300",
+          "checksum": "SHA-256:37efca2a9e434a317372938d5669e2da110b4dafaee5548e75c8fbd17571b318",
+          "size": "5125613",
+          "help": {
+            "online": "https://github.com/4project-co-il/Arduino-core"
+          },
+          "boards": [
+            {
+              "name": "PlugAndPlay SAMD21 Dev Board"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "arm-none-eabi-gcc",
+              "version": "7-2017q4"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.8.0-48-gb176eee"
+            },
+            {
+              "packager": "arduino",
+              "name": "openocd",
+              "version": "0.9.0-arduino"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS",
+              "version": "4.5.0"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS-Atmel",
+              "version": "1.2.0"
+            }
+          ]
+        },
+        {
+          "name": "4Project.co.il SAMD Boards (dependency: Arduino SAMD Boards 1.8.1)",
+          "architecture": "samd",
+          "version": "0.0.3",
+          "category": "Contributed",
+          "url": "https://github.com/4project-co-il/Arduino-core/raw/main/Arduino-IDE/4project-samd-0.0.3.zip",
+          "archiveFileName": "4project-samd-0.0.3.zip",
+          "checksum": "SHA-256:91560d423a2db2a5d13550b653f4a9e8495f199e2d2729ca17342e979b1ab384",
+          "size": "5126109",
           "help": {
             "online": "https://github.com/4project-co-il/Arduino-core"
           },

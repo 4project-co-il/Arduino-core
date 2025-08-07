@@ -230,5 +230,25 @@ unsigned int PINCOUNT_fn();
 #define SERIAL_PORT_HARDWARE        Serial1
 #define SERIAL_PORT_HARDWARE_OPEN   Serial1
 
+
+// Plug-n-Play system initialization parameters
+// Number of I2C interfaces for current board
+#define PNP_NUMBER_OF_I2C_INTERFACES  1
+
+// Interface index that will be used for programming PnP device EEPROMs
+#define PNP_EEPROM_PROGRAMMING_INTERFACE_INDEX  0
+
+// Interface index where the controller I2C devices are connected
+#define PNP_CONTROLLER_INTERNAL_I2C_INTERFACE_INDEX  0
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+uint8_t PnP_GetInterfaceIndexForPort(uint8_t portNum);
+#ifdef __cplusplus
+}
+#endif
+
+
 #endif /* _VARIANT_ARDUINO_ZERO_ */
 

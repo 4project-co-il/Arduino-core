@@ -232,3 +232,9 @@ void SERCOM0_Handler()
 //  Serial.IrqHandler();
 //}
 
+
+// Plug-n-Play system initialization parameters
+// For that board all the ports are accessible via interface 0
+uint8_t PnP_GetInterfaceIndexForPort(uint8_t portNum) {
+  return 0;
+}
